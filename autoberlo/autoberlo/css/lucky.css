@@ -1,0 +1,173 @@
+/* Basic styling */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Hide horizontal scroll */
+    background-color: #000000; /* Fekete háttér */
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+/* Main section with blur */
+.header-section {
+    flex-grow: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background image with blur */
+.header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/bk.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(5px);
+    z-index: 1;
+}
+
+/* Main text container */
+.header-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 300px;
+    font-size: 25px;
+}
+
+/* Increased font size and bold for main title */
+.header-content h1 {
+    font-size: 60px; /* Increased font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Increased font size and bold for subtitle */
+.header-content p.lead {
+    font-size: 30px; /* Increased font size */
+    font-weight: bold; /* Make the text bold */
+}
+
+/* Navigation bar */
+nav {
+    background-color: #000000;
+    position: relative;
+    height: 60px;
+}
+
+/* Align navigation items to the right */
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 20px; /* Add space between items */
+}
+
+nav a {
+    color: #af1e14;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #d63333;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the text on smaller screens */
+    align-items: center;
+    text-align: center;
+}
+
+.newsletter {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Push the newsletter to the right */
+}
+
+.newsletter input[type="email"] {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    background-color: #af1e14;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #d63333;
+}
+
+/* Animated car above the footer */
+.footer-car-animation {
+    position: absolute;
+    bottom: 30px; /* Adjusted so that the car appears above the footer */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 4;
+}
+
+.car-footer {
+    width: 150px;
+    position: absolute;
+    animation: drive-footer 4s linear infinite;
+    transform: scaleX(-1); /* Flip the car horizontally */
+}
+
+@keyframes drive-footer {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: calc(100% - 150px); /* Move across the screen */
+    }
+}
+
+/* Button styling */
+.btn-danger {
+    background-color: #af1e14;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    transform: scale(1.1);
+    background-color: #d63333;
+}
+
+/* Additional Animations */
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
