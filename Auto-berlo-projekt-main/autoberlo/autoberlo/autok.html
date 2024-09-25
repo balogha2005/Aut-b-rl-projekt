@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedGo Autóbérlő</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/autok.css">
+</head>
+
+<body id="home">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.jpg" alt="RedGo" class="rounded-circle" width="50">
+                <span class="ms-3">RedGo</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Főoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="autok.html">Autók</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bérlés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Szolgáltatások</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Árak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">GYIK</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <h1>RedGo Autóbérlő</h1>
+        <div class="companys_name">
+            <h2>AUTÓK</h2>
+        </div>
+    </div>
+
+    <!-- Card section -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="my-4 text-white">Elektromos autók</h1>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card shadow-lg h-100">
+                    <img src="./img/bmwi3.png" class="card-img-top" alt="BMW i3">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">BMW i3</h5>
+                        <a href="#" class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#carModal" onclick="showCarInfo('BMW i3', './img/bmwi3.png', 'Max sebesség: 150 km/h<br>Hatótáv: 200 km<br>Teljesítmény: 170 LE')"><i class="bi bi-info-circle"></i> További információ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg h-100">
+                    <img src="./img/vweup.png" class="card-img-top" alt="VW e-Up!">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">VW e-Up!</h5>
+                        <a href="#" class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#carModal" onclick="showCarInfo('VW e-Up!', './img/vweup.png', 'Max sebesség: 135 km/h<br>Hatótáv: 160 km<br>Teljesítmény: 82 LE')"><i class="bi bi-info-circle"></i> További információ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg h-100">
+                    <img src="./img/io.png" class="card-img-top" alt="Hyundai IONIQ 6">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Hyundai IONIQ 6</h5>
+                        <a href="#" class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#carModal" onclick="showCarInfo('Hyundai IONIQ 6', './img/io.png', 'Max sebesség: 185 km/h<br>Hatótáv: 614 km<br>Teljesítmény: 228 LE')"><i class="bi bi-info-circle"></i> További információ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="my-4 text-white">Benzines autók</h1>
+                </div>
+            </div>
+        <!-- Második sor -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+            <div class="col">
+                <div class="card shadow-lg h-100">
+                    <img src="./img/fiat500.png" class="card-img-top" alt="Tesla Model 3">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Fiat 500</h5>
+                        <a href="#" class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#carModal" onclick="showCarInfo('Tesla Model 3', './img/tesla3.png', 'Max sebesség: 225 km/h<br>Hatótáv: 580 km<br>Teljesítmény: 283 LE')"><i class="bi bi-info-circle"></i> További információ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg h-100">
+                    <img src="./img/vitara.png" class="card-img-top" alt="Nissan Leaf">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Suzuki Vitara</h5>
+                        <a href="#" class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#carModal" onclick="showCarInfo('Nissan Leaf', './img/nissangleaf.png', 'Max sebesség: 144 km/h<br>Hatótáv: 270 km<br>Teljesítmény: 150 LE')"><i class="bi bi-info-circle"></i> További információ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card shadow-lg h-100">
+                    <img src="./img/peugot.png" class="card-img-top" alt="Audi A6 e-tron">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">Peugot 206</h5>
+                        <a href="#" class="btn btn-danger mt-auto" data-bs-toggle="modal" data-bs-target="#carModal" onclick="showCarInfo('Audi A6 e-tron', './img/audia6e.png', 'Max sebesség: 250 km/h<br>Hatótáv: 700 km<br>Teljesítmény: 476 LE')"><i class="bi bi-info-circle"></i> További információ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal structure -->
+    <div class="modal fade" id="carModal" tabindex="-1" aria-labelledby="carModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carModalLabel">Autó neve</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="carImage" src="" class="img-fluid mb-3" alt="Autó kép">
+                    <p id="carSpecs"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer with newsletter -->
+    <footer class="d-flex justify-content-center justify-content-md-between align-items-center">
+        <p class="text-center m-0">© 2024 RedGo Autóbérlés | Minden jog fenntartva</p>
+        
+        <!-- Newsletter subscription form -->
+        <div class="newsletter">
+            <form id="newsletterForm">
+                <input type="email" id="email" placeholder="Email cím" required>
+                <button type="submit" class="btn btn-danger">Feliratkozom</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for the subscription form -->
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+            
+            // Display an alert for successful subscription
+            alert('Sikeresen feliratkoztál a hírlevélre!');
+            
+            // Reset the form after submission
+            document.getElementById('newsletterForm').reset();
+        });
+    </script>
+</body>
+
+</html>

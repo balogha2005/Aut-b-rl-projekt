@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedGo Autóbérlő</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body id="home">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.jpg" alt="RedGo" class="rounded-circle" width="50">
+                <span class="ms-3">RedGo</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Főoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="autok.html">Autók</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bérlés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Szolgáltatások</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Árak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">GYIK</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main section -->
+    <header class="header-section">
+        <div class="header-content">
+            <h1 class="display-4 animate-fade-in">RedGo Autóbérlő</h1>
+            <p class="lead mb-4 animate-slide-up">Üdvözlünk a honlapunkon!</p>
+            <p class="animate-slide-up">Fedezd fel prémium autóink széles választékát, és élvezd az utazást a legjobb feltételek mellett!</p>
+            <p class="animate-slide-up">Szolgáltatásaink között megtalálhatóak az elektromos és benzines autók, amelyeket egyszerűen és gyorsan bérelhetsz.</p>
+            <a href="autok.html" class="btn btn-lg btn-danger animate-bounce">Autóink megtekintése</a>
+        </div>
+    </header>
+
+    <!-- Animated car above the footer -->
+    <div class="footer-car-animation">
+        <img src="./img/car-icon.png" alt="Piros kisautó" class="car-footer">
+    </div>
+
+    <!-- Footer with newsletter -->
+    <footer class="d-flex justify-content-center justify-content-md-between align-items-center">
+        <p class="text-center m-0">© 2024 RedGo Autóbérlés | Minden jog fenntartva</p>
+        
+        <!-- Newsletter subscription form -->
+        <div class="newsletter">
+            <form id="newsletterForm">
+                <input type="email" id="email" placeholder="Email cím" required>
+                <button type="submit" class="btn btn-danger">Feliratkozom</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for the subscription form -->
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+            
+            // Display an alert for successful subscription
+            alert('Sikeresen feliratkoztál a hírlevélre!');
+            
+            // Reset the form after submission
+            document.getElementById('newsletterForm').reset();
+        });
+    </script>
+</body>
+
+</html>
