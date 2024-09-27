@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedGo Autóbérlő - Bérlés</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/autok.css">
+</head>
+<body id="home" class="d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.jpg" alt="RedGo" class="rounded-circle" width="50">
+                <span class="ms-3">RedGo</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="autok.html">Autók</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="berles.html">Bérlés</a></li>
+                    <li class="nav-item"><a class="nav-link" href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arak.html">Árak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gyik.html">GYIK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content: Bérlés -->
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Autóbérlés</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form id="rentalForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Név</label>
+                        <input type="text" class="form-control" id="name" placeholder="Teljes név" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email cím</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email cím" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telefonszám</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="+36 30 123 4567" required>
+                    </div>
+                    
+                    <!-- Fuel Type Selection -->
+                    <div class="mb-3">
+                        <label for="fuelType" class="form-label">Üzemanyag típus</label>
+                        <select class="form-select" id="fuelType" required>
+                            <option value="" disabled selected>Válasszon üzemanyag típust...</option>
+                            <option value="Benzines">Benzines</option>
+                            <option value="Elektromos">Elektromos</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Car Model Selection -->
+                    <div class="mb-3" id="carModelDiv" style="display: none;">
+                        <label for="carModel" class="form-label">Autó típus</label>
+                        <select class="form-select" id="carModel" required>
+                            <option value="" disabled selected>Válasszon autót...</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="rentalDate" class="form-label">Bérlés kezdete</label>
+                        <input type="date" class="form-control" id="rentalDate" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="returnDate" class="form-label">Bérlés vége</label>
+                        <input type="date" class="form-control" id="returnDate" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger w-100">Bérlés</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex justify-content-center justify-content-md-between align-items-center mt-auto">
+        <p class="text-center m-0">© 2024 RedGo Autóbérlés | Minden jog fenntartva | Kapcsolat: Email: info@redgo.hu | Telefon: +36 30 123 4567 | Cím: 1051 Budapest, Széchenyi István tér 9.</p>
+        
+        <!-- Newsletter subscription form -->
+        <div class="newsletter">
+            <form id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Email cím" required>
+                <button type="submit" class="btn btn-danger">Feliratkozom</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Car models based on fuel type
+        const carModels = {
+            Benzines: ["Fiat 500", "Suzuki Vitara", "Peugeot 206"],
+            Elektromos: ["BMW i3", "VW E-UP!", "Hyundai IONIQ 6"]
+        };
+
+        // Listen to the fuel type selection
+        document.getElementById('fuelType').addEventListener('change', function () {
+            const fuelType = this.value;
+            const carModelSelect = document.getElementById('carModel');
+
+            // Clear previous car options
+            carModelSelect.innerHTML = '<option value="" disabled selected>Válasszon autót...</option>';
+
+            // Populate car options based on selected fuel type
+            if (fuelType in carModels) {
+                carModels[fuelType].forEach(car => {
+                    const option = document.createElement('option');
+                    option.value = car;
+                    option.textContent = car;
+                    carModelSelect.appendChild(option);
+                });
+                document.getElementById('carModelDiv').style.display = 'block';
+            }
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sikeresen feliratkoztál a hírlevélre!');
+            document.getElementById('newsletterForm').reset();
+        });
+
+        document.getElementById('rentalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Bérlési igény sikeresen elküldve!');
+            document.getElementById('rentalForm').reset();
+        });
+    </script>
+</body>
+</html>

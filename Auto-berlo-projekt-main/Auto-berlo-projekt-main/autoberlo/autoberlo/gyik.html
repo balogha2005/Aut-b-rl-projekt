@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedGo GYIK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/gyik.css">
+</head>
+<body id="gyik" class="d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.jpg" alt="RedGo" class="rounded-circle" width="50">
+                <span class="ms-3">RedGo</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="autok.html">Autók</a></li>
+                    <li class="nav-item"><a class="nav-link" href="berles.html">Bérlés</a></li>
+                    <li class="nav-item"><a class="nav-link" href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arak.html">Árak</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gyik.html">GYIK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- GYIK szekció -->
+    <div class="container question-section">
+        <h2>Gyakran Ismételt Kérdések</h2>
+
+        <div class="question">Hogyan foglalhatok autót?</div>
+        <div class="answer">Az autóbérléshez látogass el a "Bérlés" oldalra, válassz autót, és kövesd az utasításokat.</div>
+
+        <div class="question">Milyen dokumentumokra van szükség az autóbérléshez?</div>
+        <div class="answer">Szükséged lesz egy érvényes jogosítványra és személyazonosító okmányra.</div>
+
+        <div class="question">Van lehetőség hosszú távú bérlésre?</div>
+        <div class="answer">Igen, hosszú távú bérlésre is van lehetőség, akár egy hónapra vagy hosszabb időszakra is.</div>
+
+        <div class="question">Milyen biztosítások tartoznak az autóbérléshez?</div>
+        <div class="answer">Az alapbiztosítás tartalmazza a balesetvédelmet, de kiegészítő biztosítást is köthetsz.</div>
+
+        <div class="question">Mi történik, ha balesetet szenvedek a bérelt autóval?</div>
+        <div class="answer">Baleset esetén azonnal értesítsd a bérbeadót, és a biztosítás alapján rendezzük az ügyet.</div>
+
+        <div class="question">Hogyan fizethetek az autóbérlésért?</div>
+        <div class="answer">Fizethetsz bankkártyával, hitelkártyával vagy előre átutalással is.</div>
+
+        <div class="question">Visszamondhatom a foglalásomat?</div>
+        <div class="answer">Igen, de a visszamondás feltételei változnak attól függően, hogy mennyi idővel korábban mondod vissza.</div>
+
+        <div class="question">Van lehetőség elektromos autó bérlésére?</div>
+        <div class="answer">Igen, flottánkban többféle elektromos autó is elérhető, például a BMW i3 vagy a Hyundai IONIQ 6.</div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="text-white m-0">© 2024 RedGo Autóbérlés | Minden jog fenntartva</p>
+            <div class="newsletter">
+                <form id="newsletterForm">
+                    <input type="email" id="email" placeholder="Email cím" required>
+                    <button type="submit" class="btn btn-danger">Feliratkozom</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript a GYIK kérdésekhez -->
+    <script>
+        const questions = document.querySelectorAll('.question');
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                question.classList.toggle('active');
+                const answer = question.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sikeresen feliratkoztál a hírlevélre!');
+            document.getElementById('newsletterForm').reset();
+        });
+    </script>
+</body>
+</html>

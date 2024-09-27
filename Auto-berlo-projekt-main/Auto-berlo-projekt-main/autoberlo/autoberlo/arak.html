@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedGo Autóbérlő - Árak és Részletek</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/arak.css">
+</head>
+<body id="home" class="d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top shadow-sm">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./img/logo.jpg" alt="RedGo" class="rounded-circle" width="50">
+                <span class="ms-3">RedGo</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Főoldal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="autok.html">Autók</a></li>
+                    <li class="nav-item"><a class="nav-link" href="berles.html">Bérlés</a></li>
+                    <li class="nav-item"><a class="nav-link" href="szolgaltatasok.html">Szolgáltatások</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="arak.html">Árak</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gyik.html">GYIK</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content: Árak és Részletek -->
+    <div class="container mt-5 pt-5">
+        <h2 class="text-center mb-4">Autóbérlés Árak és Részletek</h2>
+        <p class="text-center mb-5 fs-5">Tekintse meg bérelhető autóink részletes információit és árait!</p>
+        
+        <!-- Elektromos Autók -->
+        <h3 class="category-title">Elektromos Autók</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card car-card h-100">
+                    <img src="./img/bmwi3.png" class="card-img-top" alt="BMW i3">
+                    <div class="card-body">
+                        <h5 class="card-title">BMW i3</h5>
+                        <p class="card-text">Tisztán elektromos meghajtás, 280 km-es hatótávval és prémium felszereltséggel.</p>
+                        <p class="price">Napi bérleti díj: 15 000 Ft</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card car-card h-100">
+                    <img src="./img/vweup.png" class="card-img-top" alt="VW E-UP!">
+                    <div class="card-body">
+                        <h5 class="card-title">VW E-UP!</h5>
+                        <p class="card-text">Kis városi autó, 200 km-es hatótávval és alacsony fogyasztással.</p>
+                        <p class="price">Napi bérleti díj: 10 000 Ft</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card car-card h-100">
+                    <img src="./img/io.png" class="card-img-top" alt="Hyundai IONIQ 6">
+                    <div class="card-body">
+                        <h5 class="card-title">Hyundai IONIQ 6</h5>
+                        <p class="card-text">Nagy hatótáv és sportos dizájn a hosszú utakra.</p>
+                        <p class="price">Napi bérleti díj: 18 000 Ft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Benzines Autók -->
+        <h3 class="category-title mt-5">Benzines Autók</h3>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card car-card h-100">
+                    <img src="./img/fiat500.png" class="card-img-top" alt="Fiat 500">
+                    <div class="card-body">
+                        <h5 class="card-title">Fiat 500</h5>
+                        <p class="card-text">Stílusos városi autó kompakt méretekkel és gazdaságos fogyasztással.</p>
+                        <p class="price">Napi bérleti díj: 8 000 Ft</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card car-card h-100">
+                    <img src="./img/vitara.png" class="card-img-top" alt="Suzuki Vitara">
+                    <div class="card-body">
+                        <h5 class="card-title">Suzuki Vitara</h5>
+                        <p class="card-text">Családi SUV tágas belső térrel és megbízható teljesítménnyel.</p>
+                        <p class="price">Napi bérleti díj: 12 000 Ft</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card car-card h-100">
+                    <img src="./img/peugot.png" class="card-img-top" alt="Peugeot 206">
+                    <div class="card-body">
+                        <h5 class="card-title">Peugeot 206</h5>
+                        <p class="card-text">Klasszikus kisautó dinamikus vezetési élménnyel.</p>
+                        <p class="price">Napi bérleti díj: 7 000 Ft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="d-flex justify-content-center justify-content-md-between align-items-center mt-auto">
+        <p class="text-center m-0">© 2024 RedGo Autóbérlés | Minden jog fenntartva | Kapcsolat: Email: info@redgo.hu | Telefon: +36 30 123 4567 | Cím: 1051 Budapest, Széchenyi István tér 9.</p>
+        
+        <!-- Newsletter subscription form -->
+        <div class="newsletter">
+            <form id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Email cím" required>
+                <button type="submit" class="btn btn-danger">Feliratkozom</button>
+            </form>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Sikeresen feliratkoztál a hírlevélre!');
+            document.getElementById('newsletterForm').reset();
+        });
+    </script>
+</body>
+</html>
